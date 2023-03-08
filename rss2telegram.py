@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from telebot import types
 from time import gmtime
+from datetime import datetime
 import feedparser
 import os
 import re
@@ -155,7 +156,7 @@ def check_topics(url):
         topic['title'] = tpc.title.strip()
         topic['summary'] = tpc.summary
         topic['description'] = tpc.description
-        topic['date'] = tpc.published
+        topic['date'] = datetime.datetime(tpc.published_parsed)
         topic['link'] = tpc.links[0].href
         topic['photo'] = get_img(tpc.links[0].href)
         BUTTON_TEXT = os.environ.get('BUTTON_TEXT', False)
