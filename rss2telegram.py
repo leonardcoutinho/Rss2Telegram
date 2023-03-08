@@ -125,7 +125,6 @@ def set_text_vars(text, topic):
         'TITLE': topic['title'],
         'SUMMARY': re.sub('<[^<]+?>', '', topic['summary']),
         'DESCRIPTION': topic['description']),
-         #'PUBDATE': topic['pubDate']),
         'LINK': define_link(topic['link'], PARAMETERS),
         'EMOJI': random.choice(EMOJIS.split(","))
     }
@@ -155,7 +154,6 @@ def check_topics(url):
         topic['title'] = tpc.title.strip()
         topic['summary'] = tpc.summary
         topic['description'] = tpc.description
-        #topic['pubDate'] = tpc.pubDate
         topic['link'] = tpc.links[0].href
         topic['photo'] = get_img(tpc.links[0].href)
         BUTTON_TEXT = os.environ.get('BUTTON_TEXT', False)
