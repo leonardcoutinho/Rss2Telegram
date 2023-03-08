@@ -125,6 +125,7 @@ def set_text_vars(text, topic):
         'TITLE': topic['title'],
         'SUMMARY': re.sub('<[^<]+?>', '', topic['summary']),
         'DESCRIPTION': topic['description'],
+        'DATA': topic['date'],
         'LINK': define_link(topic['link'], PARAMETERS),
         'EMOJI': random.choice(EMOJIS.split(","))
     }
@@ -153,8 +154,9 @@ def check_topics(url):
         topic['site_name'] = feed['feed']['title']
         topic['title'] = tpc.title.strip()
         topic['summary'] = tpc.summary
-        topic['description'] = tpc.description
+        topic['description'] = feed.description
         topic['link'] = tpc.links[0].href
+        topic['date'] = feed.published
         topic['photo'] = get_img(tpc.links[0].href)
         BUTTON_TEXT = os.environ.get('BUTTON_TEXT', False)
         if BUTTON_TEXT:
