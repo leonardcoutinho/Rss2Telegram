@@ -124,7 +124,7 @@ def set_text_vars(text, topic):
         'SITE_NAME': topic['site_name'],
         'TITLE': topic['title'],
         'SUMMARY': re.sub('<[^<]+?>', '', topic['summary']),
-        'DESCRIPTION': topic['description']),
+        'DESCRIPTION': topic['description'],
         'LINK': define_link(topic['link'], PARAMETERS),
         'EMOJI': random.choice(EMOJIS.split(","))
     }
