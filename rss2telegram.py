@@ -154,9 +154,11 @@ def check_topics(url):
         topic['site_name'] = feed['feed']['title']
         topic['title'] = tpc.title.strip()
         topic['summary'] = tpc.summary
-        topic['description'] = tpc.description
+        topic['description'] = tpc.entries[0].description
+        print(tpc.entries[0].description)
+        topic['date'] = tpc.entries[0].published
+        print(tpc.entries[0].published)
         topic['link'] = tpc.links[0].href
-        topic['date'] = tpc.published
         topic['photo'] = get_img(tpc.links[0].href)
         BUTTON_TEXT = os.environ.get('BUTTON_TEXT', False)
         if BUTTON_TEXT:
