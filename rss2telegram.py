@@ -65,7 +65,7 @@ def firewall(text):
 def send_message(topic, button):
     if DRYRUN == 'failure':
         return
-    MESSAGE_TEMPLATE = os.environ.get(f'MESSAGE_TEMPLATE', False)
+    MESSAGE_TEMPLATE = os.environ.get(f'MESSAGE_TEMPLATE', true)
     if MESSAGE_TEMPLATE:
         MESSAGE_TEMPLATE = set_text_vars(MESSAGE_TEMPLATE, topic)
     else:
