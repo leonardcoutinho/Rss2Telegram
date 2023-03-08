@@ -44,7 +44,7 @@ Defina as variáveis na aba `Variables` do repositório:
 
 `{DESCRIPTION}`: Descrição do post do feed;
 
-`{DATA}': Data da publicação da noticia, no formato GMT;
+`{DATA}`: Data da publicação da noticia, no formato GMT;
 
 `{LINK}`: Link do post;
 
