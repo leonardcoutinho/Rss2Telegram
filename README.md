@@ -41,7 +41,8 @@ Defina as variáveis na aba `Variables` do repositório:
 `{TITLE}`: Título do post;
 
 `{SUMMARY}`: Sumário do post;
-
+`{DESCRIPTION}`: Descrição do post do feed;
+`{DATA}': Data da publicação da noticia, no formato GMT;
 `{LINK}`: Link do post;
 
 `{EMOJI}`: Emoji escolhido aleatoriamente da lista.
